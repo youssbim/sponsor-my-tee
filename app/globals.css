@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fafaf8;
+  --color-card: #ffffff;
+  --color-snow: #f0efeb;
+  --color-ink: #121212;
+  --color-ink-2: #676767;
+  --color-ink-3: #a3a3a0;
+  --color-line: #e6e4df;
+  --color-blue: #2656e8;
+  --color-blue-soft: #e9eefc;
+  --color-green: #16803c;
+  --color-green-soft: #e4f3e8;
+  --color-red: #d70015;
+  --color-amber: #b25000;
+  --color-amber-soft: #fdf1e3;
+  --color-tee: #141416;
+
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-geist), -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --animate-rise: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-flash: flash 1400ms ease-out;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+  --animate-sheen: sheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(6%, 8%, 0) scale(1.15);
+    }
+  }
+
+  /* The band crosses the whole button, leaves it completely, then rests out of sight. */
+  @keyframes sheen {
+    0% {
+      transform: translateX(-100%);
+    }
+    55%,
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      background-color: var(--color-green-soft);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
