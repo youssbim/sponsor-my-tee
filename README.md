@@ -4,7 +4,9 @@ Sell print spots on a t-shirt you'll wear at a conference, as a live auction. Pe
 
 Built with Next.js, Supabase and Stripe. Everything in this repo is placeholder content — photos, event, copy — so you can point it at your own event in about an hour.
 
-![Placeholder screenshot](public/tee/front.jpg)
+![The live site](public/screenshot.jpg)
+
+*The site in production at [itechweek.youssbim.com](https://itechweek.youssbim.com), the project this template comes from. This repo ships with placeholder photos and copy instead.*
 
 ## What it does
 
